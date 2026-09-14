@@ -1,0 +1,6 @@
+{
+  "name": "Tech, Toys & Stationery",
+  "description": "Showcase app for a local business offering curated tech gadgets, educational toys, and premium stationery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
