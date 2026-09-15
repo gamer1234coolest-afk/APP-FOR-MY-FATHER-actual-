@@ -14,5 +14,12 @@ data class TestimonialEntity(
     val comment: String,
     val date: String,
     val verifiedProject: Boolean = true,
-    val timestamp: Long = System.currentTimeMillis()
+    val timestamp: Long = System.currentTimeMillis(),
+    val isGoogleReview: Boolean = false,
+    val source: String = "",
+    val reviewerBadge: String = "",
+    val reviewerInitials: String = "",
+    val ownerResponse: String = "",
+    val likeCount: Int = 0,
+    val reviewUrl: String = ""
 )
