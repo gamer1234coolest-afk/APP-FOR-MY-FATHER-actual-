@@ -51,6 +51,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
@@ -131,14 +133,15 @@ fun MainAppScreen(viewModel: BusinessViewModel) {
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             Surface(
-                                shape = CircleShape,
-                                modifier = Modifier.size(34.dp),
-                                color = MaterialTheme.colorScheme.primaryContainer
+                                shape = RoundedCornerShape(8.dp),
+                                modifier = Modifier.size(36.dp),
+                                color = Color(0xFFFDB813)
                             ) {
                                 Image(
                                     painter = painterResource(id = R.drawable.img_app_icon),
                                     contentDescription = "Apex Enterprises Logo",
-                                    modifier = Modifier.fillMaxSize()
+                                    modifier = Modifier.fillMaxSize(),
+                                    contentScale = ContentScale.Crop
                                 )
                             }
                             Spacer(modifier = Modifier.width(10.dp))

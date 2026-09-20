@@ -168,6 +168,62 @@ fun AboutSection(
             }
         }
 
+        // Official Brand & Logo Showcase
+        item {
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .testTag("brand_identity_card"),
+                shape = RoundedCornerShape(20.dp),
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.surface
+                ),
+                elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
+            ) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(20.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Surface(
+                        shape = RoundedCornerShape(16.dp),
+                        color = Color(0xFFFDB813),
+                        shadowElevation = 3.dp,
+                        modifier = Modifier.size(160.dp)
+                    ) {
+                        Image(
+                            painter = painterResource(id = R.drawable.img_apex_logo),
+                            contentDescription = "Official Apex Enterprises Logo",
+                            modifier = Modifier.fillMaxSize(),
+                            contentScale = ContentScale.Fit
+                        )
+                    }
+                    Spacer(modifier = Modifier.height(14.dp))
+                    Text(
+                        text = "Apex Enterprises",
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
+                    Text(
+                        text = "Official Logo & Brand Mark",
+                        style = MaterialTheme.typography.labelMedium,
+                        color = MaterialTheme.colorScheme.primary,
+                        fontWeight = FontWeight.SemiBold
+                    )
+                    Spacer(modifier = Modifier.height(6.dp))
+                    Text(
+                        text = "The vibrant peacock emblem represents quality, dependability, and pride in providing everyday stationery, mobile accessories, toys, gifts, and document services to the Medavakkam community.",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.padding(horizontal = 8.dp)
+                    )
+                }
+            }
+        }
+
         // Story of the Business
         item {
             Card(
