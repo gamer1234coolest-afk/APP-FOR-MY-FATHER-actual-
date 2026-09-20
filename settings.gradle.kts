@@ -22,6 +22,6 @@ dependencyResolutionManagement {
   }
 }
 
-rootProject.name = "Business Showcase"
+rootProject.name = "Apex Enterprises"
 
 include(":app")

@@ -113,12 +113,12 @@ fun WoodcraftAiSection(
                     Spacer(modifier = Modifier.width(10.dp))
                     Column {
                         Text(
-                            text = "Beacon Store AI Assistant",
+                            text = "Apex Store AI Assistant",
                             style = MaterialTheme.typography.titleSmall,
                             fontWeight = FontWeight.Bold
                         )
                         Text(
-                            text = "Powered by Gemini 3.5 Flash • Tech, Toys & Stationery",
+                            text = "Powered by Gemini • Stationery, Retail & Document Services",
                             style = MaterialTheme.typography.labelSmall,
                             color = MaterialTheme.colorScheme.primary
                         )
@@ -188,7 +188,7 @@ fun WoodcraftAiSection(
                                 )
                                 Spacer(modifier = Modifier.width(8.dp))
                                 Text(
-                                    text = "Consulting Beacon product specialists...",
+                                    text = "Consulting Apex Enterprises assistant...",
                                     style = MaterialTheme.typography.bodySmall,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant
                                 )

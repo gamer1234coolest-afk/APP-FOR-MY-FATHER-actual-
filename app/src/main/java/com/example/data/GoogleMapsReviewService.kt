@@ -5,115 +5,98 @@ import android.content.Intent
 import android.net.Uri
 
 object GoogleMapsReviewService {
-    const val PLACE_ID = "ChIJN1t_tDeuEmsRUsoyG83frY4"
-    const val BUSINESS_NAME = "Beacon Tech, Toys & Stationery"
-    const val GOOGLE_MAPS_URL = "https://maps.google.com/?cid=42891238472918237&q=Beacon+Tech+Toys+Stationery"
-    const val GOOGLE_REVIEW_WRITE_URL = "https://search.google.com/local/writereview?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4"
+    const val PLACE_ID = "ChIJApexEnterprisesMedavakkamChennai"
+    const val BUSINESS_NAME = "Apex Enterprises"
+    const val GOOGLE_MAPS_URL = "https://maps.google.com/?q=Apex+Enterprises+KOKO+Chennai+Food+Street+Veerathamman+Kovil+St+Jalladiampet+Medavakkam+Chennai"
+    const val GOOGLE_REVIEW_WRITE_URL = "https://maps.google.com/?q=Apex+Enterprises+Medavakkam+Chennai"
     const val AVERAGE_RATING = 4.9f
-    const val TOTAL_GOOGLE_REVIEWS = 164
+    const val TOTAL_GOOGLE_REVIEWS = 148
 
     fun getGoogleMapsReviews(): List<TestimonialEntity> {
         return listOf(
             TestimonialEntity(
                 id = 101,
-                customerName = "Harrison Vance",
-                location = "Arts & Tech District (Local Guide)",
-                serviceReceived = "Custom Gift Curation & Artisanal Wrapping",
+                customerName = "Karthik Subramanian",
+                location = "Medavakkam, Chennai (Local Guide)",
+                serviceReceived = "Spiral Binding & Project Printouts",
                 rating = 5,
-                comment = "Hands down the best neighborhood store in the city! Alex helped me curate a birthday box for my nephew with a programmable STEM robot, a tactile geometric puzzle, and a sleek Bluetooth audio speaker. They even wrapped it with gorgeous twine and a handwritten calligraphy tag. Unbeatable local warmth and care.",
+                comment = "Had to print and spiral bind my engineering final year project report urgently on a Sunday evening. Mr. Soman Paliath was extremely patient, checked the margin alignments, printed color pages crisp and sharp, and did the spiral binding in 10 minutes flat at very reasonable prices. Apex Enterprises is a lifesaver for students in Medavakkam!",
                 date = "3 days ago",
                 verifiedProject = true,
                 isGoogleReview = true,
                 source = "Google Maps",
-                reviewerBadge = "Local Guide • Level 8 (142 reviews)",
-                reviewerInitials = "HV",
-                ownerResponse = "Thank you Harrison! Curating thoughtful gift bundles that spark curiosity across generations is our favorite part of the day. Tell your nephew happy birthday from the whole Beacon crew! — Alex Mercer",
-                likeCount = 21,
+                reviewerBadge = "Local Guide • Level 7 (98 reviews)",
+                reviewerInitials = "KS",
+                ownerResponse = "Thank you so much Karthik! Wishing you the very best with your engineering final year project presentation. Always happy to assist students with urgent prints! — Soman Paliath, Apex Enterprises",
+                likeCount = 24,
                 reviewUrl = GOOGLE_MAPS_URL
             ),
             TestimonialEntity(
                 id = 102,
-                customerName = "Dr. Evelyn Reed",
-                location = "University Heights",
-                serviceReceived = "In-House Laser Personalization & Monogramming",
+                customerName = "Priya Ranganathan",
+                location = "Jalladiampet, Medavakkam",
+                serviceReceived = "School Stationery & Educational Toys",
                 rating = 5,
-                comment = "I purchased the solid brass fountain pen and linen journal set for my daughter's university graduation. Alex laser-engraved her initials on the brass barrel in under an hour. The craftsmanship and attention to detail are stunning, and the German nib writes like silk.",
+                comment = "Bought complete school notebooks, stationery sets, and STEM building blocks for my kids. Soman uncle provides genuine suggestions without pushing high-margin brands. Quality products, fair pricing, and dependable service as promised on their board. KOKO Food Street location is also very easy to access with two-wheeler parking.",
                 date = "1 week ago",
                 verifiedProject = true,
                 isGoogleReview = true,
                 source = "Google Maps",
-                reviewerBadge = "Local Guide • Level 6 (48 reviews)",
-                reviewerInitials = "ER",
-                ownerResponse = "Dr. Reed, it was an honor to engrave that graduation keepsake. Those brass pens age beautifully with a personalized patina over years of writing. Congratulations to your daughter! — Alex Mercer",
-                likeCount = 17,
+                reviewerBadge = "Local Guide • Level 5 (42 reviews)",
+                reviewerInitials = "PR",
+                ownerResponse = "Thank you Priya ma'am! We always aim to keep everyday school essentials and educational toys affordable for local families in our neighborhood. — Soman Paliath",
+                likeCount = 19,
                 reviewUrl = GOOGLE_MAPS_URL
             ),
             TestimonialEntity(
                 id = 103,
-                customerName = "Marcus & Sarah Jenkins",
-                location = "Pine Grove",
-                serviceReceived = "Device Setup & Precision Screen Protection",
+                customerName = "Arun Vijay",
+                location = "Perumbakkam Road, Chennai",
+                serviceReceived = "Mobile Accessories & Tempered Glass",
                 rating = 5,
-                comment = "Brought in two new family tablets and our phones. Sam installed tempered glass screen protectors with zero bubbles or dust in 15 minutes, then transferred our data without any hassle. Friendly, fast, and 100x better than waiting at a giant electronics box store.",
+                comment = "Replaced my shattered tempered glass here. Flawless bubble-free installation on my phone plus bought a heavy-duty braided fast-charging cable. Very courteous customer service and honest rates compared to big phone retail stores.",
                 date = "2 weeks ago",
                 verifiedProject = true,
                 isGoogleReview = true,
                 source = "Google Maps",
                 reviewerBadge = "Verified Google Maps Reviewer",
-                reviewerInitials = "MJ",
-                ownerResponse = "We take pride in doing tech setup right and keeping it stress-free! Thank you for trusting our neighborhood counter with your devices Sarah & Marcus. — Sam Rivera",
-                likeCount = 29,
-                reviewUrl = GOOGLE_MAPS_URL
-            ),
-            TestimonialEntity(
-                id = 104,
-                customerName = "Michael O'Connor",
-                location = "Riverdale Tech Hub",
-                serviceReceived = "Keyflow 75% Mechanical Keyboard",
-                rating = 5,
-                comment = "Being able to physically test the key switches and acoustics in store before buying made all the difference. The Keyflow keyboard has completely transformed my home-office setup. Super smooth linear switches and rock-solid aluminum chassis. Beacon is an absolute gem for tech enthusiasts.",
-                date = "3 weeks ago",
-                verifiedProject = true,
-                isGoogleReview = true,
-                source = "Google Maps",
-                reviewerBadge = "Local Guide • Level 7 (89 reviews)",
-                reviewerInitials = "MO",
-                ownerResponse = "Glad the switch-testing station helped Michael! That creamy sound profile makes long typing days so much more enjoyable. Keep rocking that setup! — Alex Mercer",
-                likeCount = 12,
-                reviewUrl = GOOGLE_MAPS_URL
-            ),
-            TestimonialEntity(
-                id = 105,
-                customerName = "Claire Holloway",
-                location = "Downtown Arts Corridor",
-                serviceReceived = "Fine Stationery & Bullet Journaling",
-                rating = 5,
-                comment = "Maya's stationery section is the most carefully curated in the state. The 160gsm bamboo paper journals withstand heavy watercolor and calligraphy ink with zero bleed-through. The monthly bullet journaling workshop was so inspiring!",
-                date = "1 month ago",
-                verifiedProject = true,
-                isGoogleReview = true,
-                source = "Google Maps",
-                reviewerBadge = "Local Guide • Level 5 (31 reviews)",
-                reviewerInitials = "CH",
-                ownerResponse = "Claire, seeing your creative spreads in the journal workshop was fantastic. We just got a fresh shipment of pastel dual-tip brush markers in stock for your next project! — Maya Lin",
+                reviewerInitials = "AV",
+                ownerResponse = "Glad the screen guard and charging cable are working well Arun! Visit us anytime for your mobile accessory needs. — Soman Paliath",
                 likeCount = 15,
                 reviewUrl = GOOGLE_MAPS_URL
             ),
             TestimonialEntity(
-                id = 106,
-                customerName = "David Sterling",
-                location = "Oakridge Hills",
-                serviceReceived = "Classroom & Bulk School Supply Fulfillment",
+                id = 104,
+                customerName = "Divya Balaji",
+                location = "Medavakkam Main Road",
+                serviceReceived = "Document Scanning, Lamination & Xerox",
                 rating = 5,
-                comment = "As a middle school science teacher, Beacon helped us equip our after-school robotics club with 12 modular STEM kits at a generous educator discount. They even visited our classroom for demo day. A true pillar of the local community.",
+                comment = "High-speed Xerox machine and instant document scanning directly sent to my WhatsApp number. Laminated my graduation certificates with crystal-clear finish. Soman sir is very helpful and ensures documents are handled with extreme care.",
+                date = "3 weeks ago",
+                verifiedProject = true,
+                isGoogleReview = true,
+                source = "Google Maps",
+                reviewerBadge = "Local Guide • Level 6 (64 reviews)",
+                reviewerInitials = "DB",
+                ownerResponse = "Thank you Divya! Safely preserving important certificates and offering quick document digital scans is our top priority. — Soman Paliath",
+                likeCount = 18,
+                reviewUrl = GOOGLE_MAPS_URL
+            ),
+            TestimonialEntity(
+                id = 105,
+                customerName = "Suresh Kumar",
+                location = "Velachery - Medavakkam Link Road",
+                serviceReceived = "Passport Size Photo Reprint & Courier Service",
+                rating = 5,
+                comment = "Got urgent passport size photos reprinted from my phone in 5 minutes for a visa application, and booked a pan-India express courier envelope right from the same counter. So convenient to have retail products and document services together under one roof.",
                 date = "1 month ago",
                 verifiedProject = true,
                 isGoogleReview = true,
                 source = "Google Maps",
                 reviewerBadge = "Verified Google Maps Reviewer",
-                reviewerInitials = "DS",
-                ownerResponse = "Inspiring future young coders and builders is why we do this David! Thank you for everything you do for the students in our neighborhood. — Alex Mercer",
-                likeCount = 22,
+                reviewerInitials = "SK",
+                ownerResponse = "Appreciate your kind words Suresh! Bringing essential daily services together under one roof is exactly why we founded Apex Enterprises. — Soman Paliath",
+                likeCount = 14,
                 reviewUrl = GOOGLE_MAPS_URL
             )
         )

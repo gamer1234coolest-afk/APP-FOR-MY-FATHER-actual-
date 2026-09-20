@@ -84,7 +84,6 @@ fun CraftsmanPortalSection(
     availableUsers: List<CraftsmanUser>,
     loginError: String?,
     onLogin: (CraftsmanUser, String) -> Boolean,
-    onQuickLoginOwner: () -> Unit,
     onLogout: () -> Unit,
     // Stock / Inventory
     stockItems: List<GalleryItem>,
@@ -129,8 +128,7 @@ fun CraftsmanPortalSection(
         CraftsmanLoginView(
             availableUsers = availableUsers,
             errorMessage = loginError,
-            onLogin = onLogin,
-            onQuickLogin = onQuickLoginOwner
+            onLogin = onLogin
         )
     } else {
         CraftsmanStudioDashboard(
@@ -169,8 +167,7 @@ fun CraftsmanPortalSection(
 fun CraftsmanLoginView(
     availableUsers: List<CraftsmanUser>,
     errorMessage: String?,
-    onLogin: (CraftsmanUser, String) -> Boolean,
-    onQuickLogin: () -> Unit
+    onLogin: (CraftsmanUser, String) -> Boolean
 ) {
     var selectedUser by remember { mutableStateOf(availableUsers.first()) }
     var enteredPin by remember { mutableStateOf("") }
@@ -205,7 +202,7 @@ fun CraftsmanLoginView(
                 fontWeight = FontWeight.Bold
             )
             Text(
-                text = "Beacon Tech, Toys & Stationery Store Management",
+                text = "Apex Enterprises Store Management & Operations",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.outline
             )
@@ -288,17 +285,13 @@ fun CraftsmanLoginView(
                         value = enteredPin,
                         onValueChange = { enteredPin = it },
                         label = { Text("Staff PIN Code") },
-                        placeholder = { Text("Default: 1996") },
+                        placeholder = { Text("Enter PIN") },
                         leadingIcon = { Icon(Icons.Default.Key, contentDescription = null) },
                         visualTransformation = PasswordVisualTransformation(),
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.NumberPassword),
                         isError = errorMessage != null,
-                        supportingText = {
-                            if (errorMessage != null) {
-                                Text(errorMessage, color = MaterialTheme.colorScheme.error)
-                            } else {
-                                Text("Tip: Use PIN 1996 for instant access")
-                            }
+                        supportingText = errorMessage?.let { error ->
+                            { Text(error, color = MaterialTheme.colorScheme.error) }
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -317,18 +310,6 @@ fun CraftsmanLoginView(
                         Icon(Icons.Default.Lock, contentDescription = null)
                         Spacer(modifier = Modifier.width(8.dp))
                         Text("Log In to Staff Portal", fontWeight = FontWeight.Bold)
-                    }
-
-                    OutlinedButton(
-                        onClick = onQuickLogin,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .testTag("btn_quick_login_owner"),
-                        shape = RoundedCornerShape(12.dp)
-                    ) {
-                        Icon(Icons.Default.CheckCircle, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
-                        Spacer(modifier = Modifier.width(8.dp))
-                        Text("One-Tap Demo Login as Alex Mercer (Founder)")
                     }
                 }
             }

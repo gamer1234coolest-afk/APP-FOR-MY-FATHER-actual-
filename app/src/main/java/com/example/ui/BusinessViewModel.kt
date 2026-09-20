@@ -32,7 +32,7 @@ enum class AppSection(val label: String) {
     GALLERY("Products"),
     SERVICES("Services"),
     DONATION("Community"),
-    CHATBOT("Beacon AI"),
+    CHATBOT("Apex AI"),
     TESTIMONIALS("Reviews"),
     CONTACT("Contact"),
     SETTINGS("Settings")
@@ -47,9 +47,9 @@ data class ContactFormState(
     val fullName: String = "",
     val email: String = "",
     val phone: String = "",
-    val selectedService: String = "Device Setup & Screen Protection",
-    val timeline: String = "Within 1–2 Weeks",
-    val budget: String = "$50 – $150",
+    val selectedService: String = "Xerox & Printouts",
+    val timeline: String = "Immediate / While You Wait",
+    val budget: String = "Standard Rates",
     val details: String = "",
     val preferredContact: String = "Phone",
     val nameError: String? = null,
@@ -62,7 +62,7 @@ data class ContactFormState(
 data class ReviewFormState(
     val customerName: String = "",
     val location: String = "",
-    val serviceReceived: String = "Device Setup & Screen Protection",
+    val serviceReceived: String = "Xerox & Document Printing",
     val rating: Int = 5,
     val comment: String = "",
     val nameError: String? = null,
@@ -72,27 +72,27 @@ data class ReviewFormState(
 data class StockFormState(
     val id: String = "",
     val title: String = "",
-    val category: String = "Tech & Gadgets",
-    val woodType: String = "Anker / Aluminum",
-    val finish: String = "Midnight Black",
-    val dimensions: String = "Compact / Portable",
+    val category: String = "Office & School Stationery",
+    val woodType: String = "JK Copier / Classmate",
+    val finish: String = "Standard White",
+    val dimensions: String = "A4 Format",
     val year: String = "2024",
-    val price: String = "$59.99",
+    val price: String = "₹180",
     val stockStatus: String = "In Stock", // "In Stock", "Pre-Order", "Sold Out"
-    val stockQuantity: Int = 10,
+    val stockQuantity: Int = 20,
     val description: String = "",
-    val clientHighlight: String = "Available in-store at Beacon",
+    val clientHighlight: String = "Available at Apex Enterprises counter",
     val imagePreset: String = "img_gallery_tech",
     val isEditing: Boolean = false
 )
 
 data class DonationFormState(
     val donorName: String = "",
-    val selectedTier: String = "Youth STEM Discovery Kits",
-    val customAmount: String = "15",
+    val selectedTier: String = "Local Student Stationery & Exam Kits",
+    val customAmount: String = "100",
     val frequency: String = "One-Time", // "One-Time", "Monthly Patron"
     val note: String = "",
-    val paymentMethod: String = "Credit Card", // "Credit Card", "Google Pay", "Bank Transfer"
+    val paymentMethod: String = "UPI / Google Pay", // "UPI / Google Pay", "Cash", "Bank Transfer"
     val isAnonymous: Boolean = false,
     val nameError: String? = null,
     val amountError: String? = null,
@@ -114,9 +114,8 @@ class BusinessViewModel(application: Application) : AndroidViewModel(application
     private val geminiService = GeminiChatService()
 
     val availableCraftsmen = listOf(
-        CraftsmanUser("staff_alex", "Alex Mercer", "Founder & Tech Curator", "1996", "Gadgets & Custom Tech Setups"),
-        CraftsmanUser("staff_sam", "Sam Rivera", "STEM & Robotics Lead", "2024", "Robotics Kits, Puzzles & Construction Toys"),
-        CraftsmanUser("staff_maya", "Maya Lin", "Fine Stationery Specialist", "1850", "Fountain Pens, Japanese Paper & Binding")
+        CraftsmanUser("staff_soman", "Soman Paliath", "Proprietor & Entrepreneur", "1996", "Store Operations, Procurement & Business Services"),
+        CraftsmanUser("staff_assistant", "Apex Store Assistant", "Document & Retail Lead", "2025", "Xerox, Color Printing, Scanning, Lamination & Spiral Binding")
     )
 
     init {
@@ -142,7 +141,7 @@ class BusinessViewModel(application: Application) : AndroidViewModel(application
     val craftsmanLoginError: StateFlow<String?> = _craftsmanLoginError.asStateFlow()
 
     fun loginCraftsman(user: CraftsmanUser, enteredPin: String): Boolean {
-        if (enteredPin.trim() == user.defaultPin || enteredPin.trim() == "1996") {
+        if (enteredPin.trim() == user.defaultPin) {
             _authenticatedCraftsman.value = user
             _craftsmanLoginError.value = null
             return true
@@ -150,11 +149,6 @@ class BusinessViewModel(application: Application) : AndroidViewModel(application
             _craftsmanLoginError.value = "Incorrect PIN code for ${user.name}"
             return false
         }
-    }
-
-    fun quickLoginAsOwner() {
-        _authenticatedCraftsman.value = availableCraftsmen.first()
-        _craftsmanLoginError.value = null
     }
 
     fun logoutCraftsman() {
@@ -352,8 +346,8 @@ class BusinessViewModel(application: Application) : AndroidViewModel(application
             finish = form.finish.ifBlank { "Standard Edition" },
             dimensions = form.dimensions.ifBlank { "Standard Size" },
             year = form.year.ifBlank { "2024" },
-            description = form.description.ifBlank { "Curated product offered at Beacon Tech, Toys & Stationery." },
-            clientHighlight = form.clientHighlight.ifBlank { "Curated by Beacon Store" },
+            description = form.description.ifBlank { "Curated product offered at Apex Enterprises." },
+            clientHighlight = form.clientHighlight.ifBlank { "Available at Apex Enterprises" },
             price = form.price.ifBlank { "$29.99" },
             stockStatus = form.stockStatus,
             stockQuantity = form.stockQuantity
@@ -640,7 +634,7 @@ class BusinessViewModel(application: Application) : AndroidViewModel(application
     private val _chatMessages = MutableStateFlow<List<ChatMessage>>(
         listOf(
             ChatMessage(
-                text = "Welcome to Beacon Tech, Toys & Stationery! I am your AI store assistant. Ask me anything about our tech gadgets, STEM robotics kits, family board games, fountain pens, gift recommendations, or tech repair services!",
+                text = "Welcome to Apex Enterprises! I am your AI store assistant. Ask me anything about our school & office stationery, mobile accessories, toys, gift items, Xerox, printouts, scanning, lamination, binding, passport photos, or courier services!",
                 isUser = false
             )
         )

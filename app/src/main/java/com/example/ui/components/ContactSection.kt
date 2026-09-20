@@ -182,7 +182,7 @@ fun ContactSection(
                         OutlinedButton(
                             onClick = {
                                 val intent = Intent(Intent.ACTION_SENDTO).apply {
-                                    data = Uri.parse("mailto:${BusinessData.email}?subject=Beacon Store Inquiry")
+                                    data = Uri.parse("mailto:${BusinessData.email}?subject=Apex Enterprises Inquiry")
                                 }
                                 context.startActivity(intent)
                             },
@@ -505,7 +505,7 @@ fun ContactSection(
                     ) {
                         Icon(imageVector = Icons.Default.Send, contentDescription = null, modifier = Modifier.size(16.dp))
                         Spacer(modifier = Modifier.width(8.dp))
-                        Text(text = "Send Inquiry to Beacon Team")
+                        Text(text = "Send Inquiry to Apex Enterprises")
                     }
                 }
             }

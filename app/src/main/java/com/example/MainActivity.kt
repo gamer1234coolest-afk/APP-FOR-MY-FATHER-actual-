@@ -137,13 +137,13 @@ fun MainAppScreen(viewModel: BusinessViewModel) {
                             ) {
                                 Image(
                                     painter = painterResource(id = R.drawable.img_app_icon),
-                                    contentDescription = "Beacon Store Logo",
+                                    contentDescription = "Apex Enterprises Logo",
                                     modifier = Modifier.fillMaxSize()
                                 )
                             }
                             Spacer(modifier = Modifier.width(10.dp))
                             Text(
-                                text = "Beacon Tech, Toys & Stationery",
+                                text = "Apex Enterprises",
                                 style = MaterialTheme.typography.titleMedium,
                                 fontWeight = FontWeight.Bold,
                                 maxLines = 1,
@@ -152,14 +152,14 @@ fun MainAppScreen(viewModel: BusinessViewModel) {
                         }
                     },
                     actions = {
-                        // Quick shortcut to Beacon AI
+                        // Quick shortcut to Apex AI
                         IconButton(
                             onClick = { viewModel.setSection(AppSection.CHATBOT) },
                             modifier = Modifier.testTag("topbar_btn_ai")
                         ) {
                             Icon(
                                 imageVector = Icons.Default.AutoAwesome,
-                                contentDescription = "Beacon AI Chat",
+                                contentDescription = "Apex AI Chat",
                                 tint = if (currentSection == AppSection.CHATBOT)
                                     MaterialTheme.colorScheme.primary
                                 else
@@ -312,7 +312,7 @@ fun MainAppScreen(viewModel: BusinessViewModel) {
                 NavigationBarItem(
                     selected = currentSection == AppSection.CHATBOT,
                     onClick = { viewModel.setSection(AppSection.CHATBOT) },
-                    icon = { Icon(Icons.Default.AutoAwesome, contentDescription = "Beacon AI") },
+                    icon = { Icon(Icons.Default.AutoAwesome, contentDescription = "Apex AI") },
                     label = { Text("AI") },
                     modifier = Modifier.testTag("nav_item_chatbot"),
                     colors = NavigationBarItemDefaults.colors(
@@ -460,7 +460,6 @@ fun MainAppScreen(viewModel: BusinessViewModel) {
                                     availableUsers = viewModel.availableCraftsmen,
                                     loginError = craftsmanLoginError,
                                     onLogin = { user, pin -> viewModel.loginCraftsman(user, pin) },
-                                    onQuickLoginOwner = { viewModel.quickLoginAsOwner() },
                                     onLogout = { viewModel.logoutCraftsman() },
                                     stockItems = galleryStockItems,
                                     showStockDialog = showStockDialog,

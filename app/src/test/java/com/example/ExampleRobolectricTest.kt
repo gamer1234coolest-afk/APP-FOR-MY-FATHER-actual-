@@ -19,7 +19,7 @@ class ExampleRobolectricTest {
   fun `read string from context`() {
     val context = ApplicationProvider.getApplicationContext<Context>()
     val appName = context.getString(R.string.app_name)
-    assertEquals("Business Showcase", appName)
+    assertEquals("Apex Enterprises", appName)
   }
 
   @Test
@@ -37,11 +37,11 @@ class ExampleRobolectricTest {
   }
 
   @Test
-  fun `verify craftsman partner profiles`() {
-    val thomas = CraftsmanUser("c_1", "Thomas Miller", "Owner & Master Craftsman", "1996", "Joinery")
-    val marcus = CraftsmanUser("c_2", "Marcus Miller", "Partner & Lead Joiner", "2024", "Cabinetry")
-    assertTrue(thomas.defaultPin == "1996")
-    assertTrue(marcus.name.contains("Marcus"))
+  fun `verify staff profiles`() {
+    val alex = CraftsmanUser("c_1", "Soman Paliath", "Proprietor & Entrepreneur", "1996", "Retail & Services")
+    val assistant = CraftsmanUser("c_2", "Apex Store Assistant", "Document & Retail Lead", "2025", "Document Services")
+    assertTrue(alex.defaultPin == "1996")
+    assertTrue(assistant.name.contains("Assistant"))
   }
 
   @Test
@@ -71,7 +71,7 @@ class ExampleRobolectricTest {
     val subTabs = com.example.ui.SettingsSubTab.entries
     assertEquals(2, subTabs.size)
     assertEquals("Display & Themes", com.example.ui.SettingsSubTab.APPEARANCE.label)
-    assertEquals("Craftsman Portal", com.example.ui.SettingsSubTab.PORTAL.label)
+    assertEquals("Staff Portal", com.example.ui.SettingsSubTab.PORTAL.label)
   }
 }
 

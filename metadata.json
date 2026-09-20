@@ -1,6 +1,6 @@
 {
-  "name": "Tech, Toys & Stationery",
-  "description": "Showcase app for a local business offering curated tech gadgets, educational toys, and premium stationery.",
+  "name": "Apex Enterprises",
+  "description": "Customer-focused retail & document service destination in Medavakkam, Chennai by Soman Paliath: stationery, mobile accessories, toys, gifts, Xerox, and printing.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

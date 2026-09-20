@@ -86,9 +86,9 @@ val donationTiers = listOf(
         icon = Icons.Default.CreditCard
     ),
     DonationTier(
-        title = "Beacon Innovation & Play Sponsor",
+        title = "Apex Community Student Support Sponsor",
         amount = 150.0,
-        description = "Sponsors weekend hands-on robotics workshops and open play sessions for local families.",
+        description = "Sponsors notebook sets, geometry tools, and exam writing kits for local neighborhood school children.",
         icon = Icons.Default.Favorite
     )
 )
@@ -154,13 +154,13 @@ fun DonationSection(
                         Spacer(modifier = Modifier.width(12.dp))
                         Column {
                             Text(
-                                text = "Beacon Youth STEM & Community Fund",
+                                text = "Apex Community & Student Support Initiative",
                                 style = MaterialTheme.typography.titleMedium,
                                 fontWeight = FontWeight.Bold,
                                 color = MaterialTheme.colorScheme.onPrimaryContainer
                             )
                             Text(
-                                text = "Beacon Tech, Toys & Stationery Community Initiative",
+                                text = "Apex Enterprises • Medavakkam Neighborhood Fund",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.8f)
                             )
@@ -169,7 +169,7 @@ fun DonationSection(
 
                     Spacer(modifier = Modifier.height(14.dp))
                     Text(
-                        text = "Inspiring curiosity, hands-on learning, and creative play in our neighborhood. Your contribution directly provides STEM robotics kits to local classrooms, equips schools with fine stationery, and supports our free community repair cafe.",
+                        text = "Supporting local school students, examination kits, and community learning resources in Medavakkam and Jalladiampet. Soman Paliath and Apex Enterprises believe every child deserves access to dependable school stationery.",
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.9f)
                     )
@@ -573,7 +573,7 @@ fun DonationSection(
             text = {
                 Column {
                     Text(
-                        text = "Your contribution has been received! The Beacon team and local student beneficiaries are deeply grateful for your support in fostering hands-on learning and creativity."
+                        text = "Your contribution has been received! Soman Paliath, the Apex Enterprises team, and local student beneficiaries are deeply grateful for your support in fostering education and learning."
                     )
                     Spacer(modifier = Modifier.height(12.dp))
                     Surface(

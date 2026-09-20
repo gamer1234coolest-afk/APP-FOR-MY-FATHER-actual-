@@ -101,7 +101,7 @@ fun AboutSection(
                     ) {
                         Image(
                             painter = painterResource(id = R.drawable.img_store_owner),
-                            contentDescription = "Store Founder Alex Mercer at Beacon",
+                            contentDescription = "Proprietor Soman Paliath at Apex Enterprises",
                             modifier = Modifier.fillMaxSize(),
                             contentScale = ContentScale.Crop
                         )
@@ -205,13 +205,13 @@ fun AboutSection(
                         Spacer(modifier = Modifier.width(12.dp))
                         Column {
                             Text(
-                                text = "The Beacon Story",
+                                text = "The Apex Enterprises Story",
                                 style = MaterialTheme.typography.titleLarge,
                                 fontWeight = FontWeight.Bold,
                                 color = MaterialTheme.colorScheme.onSurface
                             )
                             Text(
-                                text = "Inspiring curiosity, play, and creativity in our neighborhood",
+                                text = "Quality products, fair pricing, and dependable service under one roof",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.outline
                             )
@@ -254,7 +254,7 @@ fun AboutSection(
                         modifier = Modifier.fillMaxWidth()
                     ) {
                         Text(
-                            text = "\"Technology should elevate focus, toys should spark tactile imagination, and fine paper should give voice to your best thoughts.\" — Alex Mercer",
+                            text = "\"A successful local business is built on three simple principles: quality products, fair pricing, and dependable service.\" — Soman Paliath",
                             style = MaterialTheme.typography.bodyMedium,
                             fontStyle = FontStyle.Italic,
                             fontWeight = FontWeight.Medium,
@@ -350,13 +350,13 @@ fun AboutSection(
                         .padding(20.dp)
                 ) {
                     Text(
-                        text = "The Beacon Team",
+                        text = "Leadership & Operations",
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.onSurface
                     )
                     Text(
-                        text = "Product specialists, tinkerers, and stationery lovers here to guide you.",
+                        text = "Dedicated to understanding customer needs and providing genuine value.",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.outline
                     )
